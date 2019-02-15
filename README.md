@@ -72,9 +72,15 @@ An example usage of this package can refer to the following.
 ```
 ########################## START SCRIPT ###########################
 
-# READ ME:
+# ACKNOWLEDGEMENT:
 # In this script, let us (1) create a toy data set, and (2) run Yin's version of Keras Neural Network.
 # COPYRIGHT @ YIQIAO YIN
+
+# README:
+# Open a new clean RStudio.
+# Open a new R script by pressing ctrl + shift + n
+# For easy navigation, please press ctrl + shift + o which will open the menu bar.
+# Feel free to copy this script to yours and you can the codes for fast execution.
 
 #################### CREATE ARTIFICIAL DATA SET ####################
 
