@@ -55,8 +55,58 @@ This package is the first package I publish in the field of deep learning. The K
 An example usage of this package can refer to the following.
 
 ```
-# For example
-YinsKerasNN::YinsKerasNN(x, y, cutoff = 0.8)
+# READ
+# Let us (1) create a toy data set, (2) run Yin's version of Keras Neural Network.
+
+########## Define an artificial data set ##########
+
+# Set seed
+set.seed(1)
+
+# Create data
+m <- 50
+n <- 1000
+
+# Explanatory variable:
+x = data.frame(cbind(
+  matrix(runif(m*n, min = 0, max = 1),nrow=n)
+))
+x <- round(x, 0)
+
+# Response variable:
+# Please feel free to choose one:
+#y <- (x$X1 + x$X2) %% 2
+#y <- x$X1^2 + x$X2^2 %% 1
+#y <- x$X1 * x$X2 %% 2
+#y <- ifelse(exp(x$X1 * x$X2) %% 1 > .5, 1, 0)
+#y <- ifelse(sin(x$X1 * x$X2) %% 1 > .5, 1, 0)
+#y <- (x$X1 + x$X2 + x$X3) %% 2
+#y <- (x$X1 * x$X2 + x$X3 * x$X4) %% 2
+y <- (sin(x$X1 * x$X2) + cos(x$X3 * x$X4)) %% 1; y <- ifelse(y > .5, 1, 0)
+
+# Data frame:
+df <- data.frame(cbind(y,x))
+all = df; print(c("Dim = (row x col) = ", dim(all)))
+all[1:5,1:3]; dim(all)
+
+# Shuffle:
+set.seed(1)
+all <- all[sample(1:nrow(all), nrow(all)), ]
+all[1:5,1:3]; dim(all)
+
+########## RUN: YinsKerasNN ##########
+
+# We want to store everything in an object:
+# Let us call this **Result**
+Result <- YinsKerasNN::YinsKerasNN(x, y, cutoff = 0.8)
+
+# Check:
+# Training and Validation Plot:
+Result$Training.Plot
+# Confusion Matrix:
+Result$Confusion.Matrix
+# Accuracy (percentage of true positive and true negative):
+Result$Testing.Accuracy
 ```
 
 ## Built With
