@@ -120,4 +120,4 @@ Result$Testing.Accuracy
 
 ## Contributing
 
-Yiqiao Yin (myself) is the sole owner and manager for this package. The origin of author's inspiration of developing this package comes from his experience in statistical machine learning and stock market. For story, please click [here](https://github.com/yiqiao-yin/Statistical_Machine_Learning/blob/master/Story.md).
+Yiqiao Yin (myself) is the sole owner and manager for this package. The origin of author's inspiration of developing this package comes from his experience in statistical machine learning and stock market. For story, please click [here](https://github.com/yiqiao-yin/Statistical_Machine_Learning/blob/master/Story.md). For more detailed information about deep learning, please see my [notes](https://yiqiaoyin.files.wordpress.com/2018/02/deep-learning-notes.pdf).
