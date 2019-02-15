@@ -1,5 +1,11 @@
 # YinsKerasNN
+
 This package uses Keras as framework which provides a high-level neural networks API developed with a focus on enabling fast experimentation.
+
+<p align="center">
+  <img src="https://github.com/yiqiao-yin/YinsKerasNN/blob/master/NNTraining.gif">
+</p>
+
 
 ## Information
 
