@@ -36,7 +36,7 @@ The installation of this package is simple. We recommend to use *devtools* to in
 
 ```
 # Please install **Keras** package first
-install.packages("keras")
+devtools::install_github("rstudio/keras")
 library(keras)
 install_keras()
 
