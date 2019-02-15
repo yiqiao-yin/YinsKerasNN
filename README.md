@@ -61,6 +61,8 @@ Inputs are the following:
 
 This package is the first package I publish in the field of deep learning. The Kears framework allows me to constructs a three-layer neural network. Though the number of layers are pre-defined, the number of hidden units for each layer and the epochs are soft thresholds and should be considered tuning parameters.
 
+For example, high prediction rate can be achieved on MNIST Handwritten Digital Images using this deep learning framework developed by Keras R interface. From experience, number of epochs may be the key for architecture with 3 hidden layers. However, this may or may not be true on other data sets.
+
 ## Example
 
 An example usage of this package can refer to the following.
