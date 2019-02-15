@@ -39,6 +39,7 @@ The installation of this package is simple. We recommend to use *devtools* to in
 install.packages("keras")
 library(keras)
 install_keras()
+
 # Install Packge using devtools
 devtools::install_github("yiqiao-yin/YinsKerasNN")
 ```
