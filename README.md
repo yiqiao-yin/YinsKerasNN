@@ -46,6 +46,8 @@ devtools::install_github("yiqiao-yin/YinsKerasNN")
 
 ### Usage
 
+This package is for classification purpose only. The algorithm conducts an artificial neural network with 3 hidden layers.
+
 Inputs are the following:
 -  **x = x**: This is the explanatory variable. Usually it is in the form of a matrix or a data frame.
 -  **y = y**: This is the response variable, i.e. labels. This is usually a column of vectors. 
