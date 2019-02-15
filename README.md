@@ -70,10 +70,13 @@ For example, high prediction rate can be achieved on MNIST Handwritten Digital I
 An example usage of this package can refer to the following.
 
 ```
-# READ
-# Let us (1) create a toy data set, (2) run Yin's version of Keras Neural Network.
+########################## START SCRIPT ###########################
 
-########## Define an artificial data set ##########
+# READ ME:
+# In this script, let us (1) create a toy data set, and (2) run Yin's version of Keras Neural Network.
+# COPYRIGHT @ YIQIAO YIN
+
+#################### CREATE ARTIFICIAL DATA SET ####################
 
 # Set seed
 set.seed(1)
@@ -109,7 +112,7 @@ set.seed(1)
 all <- all[sample(1:nrow(all), nrow(all)), ]
 all[1:5,1:3]; dim(all)
 
-########## RUN: YinsKerasNN ##########
+###################### RUN FUNCTION: YinsKerasNN #######################
 
 # We want to store everything in an object:
 # Let us call this **Result**
@@ -122,6 +125,8 @@ Result$Training.Plot
 Result$Confusion.Matrix
 # Accuracy (percentage of true positive and true negative):
 Result$Testing.Accuracy
+
+######################### END SCRIPT #############################
 ```
 
 ## Built With
