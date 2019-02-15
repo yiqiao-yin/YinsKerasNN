@@ -35,12 +35,12 @@ Basic working knowledge of using *R* and *RSTudio*. Please also have **kears** a
 The installation of this package is simple. We recommend to use *devtools* to install from Github.
 
 ```
-# Please install **Keras** package
+# Please install **Keras** package first
 install.packages("keras")
 library(keras)
 install_keras()
 
-# Install Packge using devtools
+# Install Packge using devtools from below
 devtools::install_github("yiqiao-yin/YinsKerasNN")
 ```
 
