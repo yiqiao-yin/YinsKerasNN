@@ -17,7 +17,7 @@ Information:
 - Author: Yiqiao Yin
 - Maintainer: Yiqiao Yin <eagle0504@gmail.com>
 - Description: This package uses Keras as framework which provides a high-level neural networks API developed with a focus on enabling fast experimentation.
-- License: GPL-2
+- License: GPL-2 [What is GPL-2?](http://r-pkgs.had.co.nz/description.html#license)
 - imports: quantmod,stats,xts,TTR,knitr,keras
 - Encoding: UTF-8
 - LazyData: true
