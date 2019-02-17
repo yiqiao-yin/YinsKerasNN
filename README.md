@@ -51,7 +51,7 @@ This package is for classification purpose only. The algorithm conducts an artif
 Inputs are the following:
 -  **x = x**: This is the explanatory variable. Usually it is in the form of a matrix or a data frame.
 -  **y = y**: This is the response variable, i.e. labels. This is usually a column of vectors. 
--  **cutoff = .9**: The script will y and x together in one single data frame and use this cutoff to separate out a held-out test set. The ratio of 0.9 means the script takes first 90% of the observations as training and leave the last 10% of the observations as testing. The Kears Neural Network function will uses training set to conduct K-fold cross validation.
+-  **cutoff = .9**: The script will combine y and x together in one single data frame and use this cutoff to separate out a held-out test set. The ratio of 0.9 means the script takes first 90% of the observations as training and leave the last 10% of the observations as testing. The Kears Neural Network function will uses training set to conduct K-fold cross validation.
 -  **validation_split = 0.1**: Default value for validation_split is 0.1 which means validation data used the last 10% of the training data after the cut of using **cutoff**. This way we have training set, validating set, and test set.
 -  **batch_size = 128**: This refers to a set of N samples. A batch generally approximates the distribution of the input data better than a single input. The larger the batch, the better the approximation; however, it is also true that the batch will take longer to process and will still result in only one update.
 -  **l1.units = 256**: The number of hidden units for the first hidden layer.
