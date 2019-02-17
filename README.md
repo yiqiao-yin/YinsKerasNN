@@ -122,7 +122,9 @@ all[1:5,1:3]; dim(all)
 
 # We want to store everything in an object:
 # Let us call this **Result**
+Begin.Time <- Sys.time()
 Result <- YinsKerasNN::YinsKerasNN(x, y, cutoff = 0.8)
+End.Time <- Sys.time(); print(paste0("Time spent on training this machine: ", End.Time - Begin.Time))
 
 # Check:
 # Training and Validation Plot:
