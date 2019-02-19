@@ -65,7 +65,7 @@ This package is the first package I publish in the field of deep learning. The K
 
 For example, high prediction rate can be achieved on MNIST Handwritten Digital Images using this deep learning framework developed by Keras R interface. From experience, number of epochs may be the key for architecture with 3 hidden layers. However, this may or may not be true on other data sets.
 
-## Example
+## Simulated Example
 
 An example usage of this package can refer to the following.
 
@@ -135,6 +135,51 @@ Result$Confusion.Matrix
 Result$Testing.Accuracy
 
 ######################### END SCRIPT #############################
+```
+
+## MNIST Data Set
+
+Let us use MNIST Handwritten Data Set as a more practical example. Though the data set is already cleaned up, we can still get a flavor of the level of progress this package is able to carry out. 
+
+```
+############################ MNIST DATA SET ###############################
+
+# Get data
+library(keras)
+mnist <- dataset_mnist()
+x_train <- mnist$train$x
+y_train <- mnist$train$y
+x_test <- mnist$test$x
+y_test <- mnist$test$y
+dim(x_train); dim(y_train); dim(x_test); dim(y_test)
+
+# Reshap & Rescale
+x_train <- array_reshape(x_train, c(nrow(x_train), 784))
+x_test <- array_reshape(x_test, c(nrow(x_test), 784))
+x_train <- x_train / 255; x_test <- x_test / 255
+dim(x_train); dim(y_train); dim(x_test); dim(y_test)
+
+# Combine
+train <- data.frame(cbind(y_train, x_train))
+test <- data.frame(cbind(y_test, x_test))
+colnames(test) <- colnames(train)
+all <- data.frame(rbind(train, test)); colnames(all)[1] <- "label"
+
+###################### RUN FUNCTION: YinsKerasNN #######################
+
+# We want to store everything in an object:
+# Let us call this **Result**
+Begin.Time <- Sys.time()
+Result <- YinsKerasNN::YinsKerasNN(x = all[,-1], y = all[, 1], cutoff = 0.8)
+End.Time <- Sys.time(); print(paste0("Time spent on training this machine: ", End.Time - Begin.Time))
+
+# Check:
+# Training and Validation Plot:
+Result$Training.Plot
+# Confusion Matrix:
+Result$Confusion.Matrix
+# Accuracy (percentage of true positive and true negative):
+Result$Testing.Accuracy
 ```
 
 ## Built With
