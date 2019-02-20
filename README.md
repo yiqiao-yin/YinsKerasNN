@@ -28,7 +28,7 @@ These instructions will get you started with installing the package and executin
 
 ### Prerequisites
 
-Basic working knowledge of using *R* and *RSTudio*. Please also have **kears** and **knitr** packages installed.
+Basic working knowledge of using *R* and *RStudio*. Please also have **Keras** and **knitr** packages installed.
 
 ### Installing
 
