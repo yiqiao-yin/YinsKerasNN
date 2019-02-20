@@ -180,6 +180,7 @@ Result$Training.Plot
 Result$Confusion.Matrix
 # Accuracy (percentage of true positive and true negative):
 Result$Testing.Accuracy
+
 ######################### END SCRIPT #############################
 ```
 
