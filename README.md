@@ -3,7 +3,7 @@
 This package uses Keras as framework which provides a high-level neural networks API developed with a focus on enabling fast experimentation.
 
 <p align="center">
-  <img src="https://github.com/yiqiao-yin/YinsKerasNN/blob/master/NNTraining.gif">
+  <img src="https://github.com/yiqiao-yin/YinsKerasNN/blob/master/pics/NNTraining.gif">
 </p>
 
 
@@ -99,13 +99,6 @@ x <- round(x, 0)
 
 # Response variable:
 # Please feel free to choose one:
-#y <- (x$X1 + x$X2) %% 2
-#y <- x$X1^2 + x$X2^2 %% 1
-#y <- x$X1 * x$X2 %% 2
-#y <- ifelse(exp(x$X1 * x$X2) %% 1 > .5, 1, 0)
-#y <- ifelse(sin(x$X1 * x$X2) %% 1 > .5, 1, 0)
-#y <- (x$X1 + x$X2 + x$X3) %% 2
-#y <- (x$X1 * x$X2 + x$X3 * x$X4) %% 2
 y <- (sin(x$X1 * x$X2) + cos(x$X3 * x$X4)) %% 1; y <- ifelse(y > .5, 1, 0)
 
 # Data frame:

@@ -6,10 +6,6 @@
 #' @export YinsKerasNN
 #'
 #' # Define function
-#'
-######################### KERAS: NEURO NETWORK FCT #############################
-
-# Define function
 YinsKerasNN <- function(
   x = x,
   y = y,
@@ -23,7 +19,8 @@ YinsKerasNN <- function(
 ) {
 
   # Package
-  library(keras); library(knitr)
+  library(keras)
+  library(knitr)
 
   # Data
   all <- data.frame(cbind(y,x))
@@ -90,7 +87,6 @@ YinsKerasNN <- function(
       y_test = y_test,
       Training.Plot = plot(history),
       Confusion.Matrix = confusion.matrix,
-      Confusion.Matrix.Pretty = kable(confusion.matrix),
       Testing.Accuracy = test.acc,
       All.Types.of.Error = all.error
     )
