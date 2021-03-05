@@ -1,0 +1,72 @@
+---
+title: "R Notebook"
+output: 
+  html_notebook:
+    toc: TRUE
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+### Get Data
+
+Let us download data using *Keras* package.
+
+```{r, message=FALSE, warning=FALSE, error=FALSE}
+# Get data
+library(keras)
+mnist <- dataset_mnist()
+x_train <- mnist$train$x
+y_train <- mnist$train$y
+x_test <- mnist$test$x
+y_test <- mnist$test$y
+dim(x_train); dim(y_train); dim(x_test); dim(y_test)
+```
+
+### Prep Data
+
+Let us resize the data by *array_reshape()* function. This way we can feed in the architecture the correct dimensions.
+
+```{r, message=FALSE, warning=FALSE, error=FALSE}
+# Reshap & Rescale
+x_train <- array_reshape(x_train, c(nrow(x_train), 784))
+x_test <- array_reshape(x_test, c(nrow(x_test), 784))
+x_train <- x_train / 255; x_test <- x_test / 255
+dim(x_train); dim(y_train); dim(x_test); dim(y_test)
+
+# Combine
+train <- data.frame(cbind(y_train, x_train))
+test <- data.frame(cbind(y_test, x_test))
+colnames(test) <- colnames(train)
+all <- data.frame(rbind(train, test)); colnames(all)[1] <- "label"
+```
+
+### Execute the function YinsKerasNN
+
+Let us call the function *YinsKerasNN* and this will execute a 3-layer neural network on given data.
+
+```{r, message=FALSE, warning=FALSE, error=FALSE}
+# We want to store everything in an object:
+# Let us call this **Result**
+Begin.Time <- Sys.time()
+Result <- YinsKerasNN::YinsKerasNN(x = all[,-1], y = all[, 1], cutoff = 0.8)
+End.Time <- Sys.time(); print(paste0("Time spent on training this machine: ", End.Time - Begin.Time))
+```
+
+### Results
+
+Let us visualize the results by the following plot.
+
+```{r, message=FALSE, warning=FALSE, error=FALSE}
+# Check:
+# Training and Validation Plot:
+Result$Training.Plot
+# Confusion Matrix:
+Result$Confusion.Matrix
+# Accuracy (percentage of true positive and true negative):
+Result$Testing.Accuracy
+```
+
+
+### Implication
+
+The results above indicates good performance on test set. We have ~97\% accuracy for all 10 classes. If we set up a Turing Test, we are likely to fool humans that we have a person guessing the results.
