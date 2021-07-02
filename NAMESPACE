@@ -1,2 +1,3 @@
 # Function
 export(YinsKerasNN)
+export(sampleFunction)
