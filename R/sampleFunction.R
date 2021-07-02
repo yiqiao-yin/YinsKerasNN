@@ -8,6 +8,6 @@
 #'
 #' # Define function
 sampleFunction <- function(a,b) {
-  y = a + b^2 + 1
+  y = a + b^3 + exp(2)
   return(y)
 }
